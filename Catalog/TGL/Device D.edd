@@ -1,0 +1,180 @@
+DD_REVISION 3,
+DEVICE_REVISION 2,
+DEVICE_TYPE MOSFET,
+MANUFACTURER "Ms MOSFET Vendor"
+
+VARIABLE model
+{
+	LABEL "Model";
+	CLASS LOCAL;
+	HANDLING READ;
+	TYPE ASCII (5);
+	DEFAULT_VALUE "A4ArH";
+}
+
+VARIABLE stockNumber
+{
+	LABEL "Stock Number";
+	CLASS LOCAL;
+	HANDLING READ;
+	TYPE ASCII (5);
+	DEFAULT_VALUE "12435";
+}
+
+VARIABLE vendor
+{
+	LABEL "Vendor";
+	CLASS LOCAL;
+	HANDLING READ;
+	TYPE ASCII (14);
+	DEFAULT_VALUE "XYZ associates";
+}
+
+VARIABLE type
+{
+	LABEL "Type";
+	CLASS LOCAL;
+	HANDLING READ;
+	TYPE ASCII (6);
+	DEFAULT_VALUE "analog";
+}
+
+COLLECTION additionalIdentification
+{
+	LABEL "Additional Identification";
+	MEMBERS
+	{
+		MODEL, model, "Model";
+		STOCK_NUMBER, stockNumber, "Stock Number";
+		VENDOR, vendor, "Vendor";
+		TYPE, type, "Type";
+	}
+}
+
+VARIABLE width
+{
+	LABEL "Width";
+	CLASS LOCAL;
+	HANDLING READ;
+	CONSTANT_UNIT "mm";
+	TYPE FLOAT
+	{
+		MIN_VALUE0 0;
+	}
+	DEFAULT_VALUE 2;
+}
+
+VARIABLE height
+{
+	LABEL "Height";
+	CLASS LOCAL;
+	HANDLING READ;
+	CONSTANT_UNIT "mm";
+	TYPE FLOAT
+	{
+		MIN_VALUE0 0;
+	}
+	DEFAULT_VALUE 0.5;
+}
+
+VARIABLE length
+{
+	LABEL "Length";
+	CLASS LOCAL;
+	HANDLING READ;
+	CONSTANT_UNIT "mm";
+	TYPE FLOAT
+	{
+		MIN_VALUE0 0;
+	}
+	DEFAULT_VALUE 5;
+}
+
+VARIABLE weight
+{
+	LABEL "Weight";
+	CLASS LOCAL;
+	HANDLING READ;
+	CONSTANT_UNIT "g";
+	TYPE FLOAT
+	{
+		MIN_VALUE0 0;
+	}
+	DEFAULT_VALUE 0.01;
+}
+
+VARIABLE formFactor
+{
+	LABEL "Form Factor";
+	CLASS LOCAL;
+	HANDLING READ;
+	CONSTANT_UNIT "?";
+	TYPE FLOAT
+	{
+		MIN_VALUE0 0;
+	}
+	DEFAULT_VALUE 0.5;
+}
+
+COLLECTION physicalProperties
+{
+	LABEL "Component physical properties";
+	MEMBERS
+	{
+		WIDTH, width, "Width";
+		HEIGHT, height, "Height";
+		LENGTH, length, "Length";
+		WEIGHT, weight, "Weight";
+		FORM_FACTOR, formFactor, "Form Factor";
+	}
+}
+
+VARIABLE activePower
+{
+	LABEL "Active Power";
+	CLASS LOCAL;
+	HANDLING READ;
+	CONSTANT_UNIT "mW";
+	TYPE FLOAT
+	{
+		MIN_VALUE0 0;
+	}
+	DEFAULT_VALUE 0.02;
+}
+
+VARIABLE idlePower
+{
+	LABEL "Idle Power";
+	CLASS LOCAL;
+	HANDLING READ;
+	CONSTANT_UNIT "mW";
+	TYPE FLOAT
+	{
+		MIN_VALUE0 0;
+	}
+	DEFAULT_VALUE 0.1;
+}
+
+VARIABLE maximumVoltage
+{
+	LABEL "Maximum Voltage";
+	CLASS LOCAL;
+	HANDLING READ;
+	CONSTANT_UNIT "V";
+	TYPE FLOAT
+	{
+		MIN_VALUE0 0;
+	}
+	DEFAULT_VALUE 0.03;
+}
+
+COLLECTION electricalProperties
+{
+	LABEL "Component electrical properties";
+	MEMBERS
+	{
+		ACTIVE_POWER, activePower, "Active Power";
+		IDLE_POWER, idlePower, "Idle Power";
+		MAXIMUM_VOLTAGE, maximumVoltage, "Maximum Voltage";
+	}
+}
